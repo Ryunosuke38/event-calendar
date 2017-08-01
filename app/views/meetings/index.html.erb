@@ -23,8 +23,11 @@
 
   <% meetings.each do |meeting| %>
     <div>
-      <%= meeting.name %>
-      <%= meeting.start_time %> ~ <%= meeting.end_time %>
+      <%= meeting.name %><br>
+      <%= meeting.start_time.strftime('%H:%M') %> ~ <%= meeting.end_time.strftime('%H:%M') %><br>
+      <%= link_to 'Show', meeting %>
+      <%= link_to 'Edit', edit_meeting_path(meeting) %>
+      <%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   <% end %>
 <% end %>
