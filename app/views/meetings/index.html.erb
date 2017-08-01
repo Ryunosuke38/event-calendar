@@ -24,6 +24,7 @@
   <% meetings.each do |meeting| %>
     <div>
       <%= meeting.name %>
+      <%= meeting.start_time %> ~ <%= meeting.end_time %>
     </div>
   <% end %>
 <% end %>
