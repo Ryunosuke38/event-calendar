@@ -1,0 +1,22 @@
+<div class="col-xs-10 col-xs-offset-1">
+<p id="notice"><%= notice %></p>
+
+<h1>Meetings</h1>
+<br>
+
+<%= link_to 'New Meeting', new_meeting_path, class: 'btn btn-success' %><br><br>
+
+<%= month_calendar events: @meetings do |date, meetings| %>
+  <%= date.day %>
+
+  <% meetings.each do |meeting| %>
+    <div>
+      <%= meeting.name %><br>
+      <%= meeting.start_time.strftime('%H:%M') %> ~ <%= meeting.end_time.strftime('%H:%M') %><br>
+      <%= link_to 'Show', meeting %>
+      <%= link_to 'Edit', edit_meeting_path(meeting) %>
+      <%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+<% end %>
+</div>
