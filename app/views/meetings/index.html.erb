@@ -12,6 +12,10 @@
     </tr>
   </thead>
 
+  <%= month_calendar do |date| %>
+    <%= date %>
+  <% end %>
+
   <tbody>
     <% @meetings.each do |meeting| %>
       <tr>
